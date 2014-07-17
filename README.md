@@ -37,7 +37,7 @@ That works great during initial development, and continues to hold up when you m
     </li>
   </ul>
 </nav>
-``
+```
 
 Template Map allows you to *dynamically* retreive your desired post ID based on the Page Template you told it to use. Page Template filenames rarely (if ever) change, so it's the core concept of Template Map's implementation. Everything works backwards from here.
 
@@ -56,6 +56,6 @@ Template Map also makes it easier to determine whether the current page is withi
     </li>
   </ul>
 </nav>
-``
+```
 
 Based on the same principle you can use this utility method to properly orient yourself when outputting conditional classes contingent on the current page being within a 'secton' on your site.
