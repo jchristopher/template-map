@@ -160,10 +160,11 @@ class TemplateMap {
 		$cpts = apply_filters( 'template_map_post_types', array(), $section );
 
 		// at the minimum we are considered 'in' the section if that's
-		// the current post, or the current post's post_parent
+		// the current post, or the parent is an ancestor of the current post
+		$ancestors = get_post_ancestors( $post );
 		if ( is_page( $parent_id ) ) {
 			$in_section = true;
-		} elseif ( isset( $post->post_parent ) && $parent_id == $post->post_parent ) {
+		} elseif ( in_array( $parent_id, $ancestors ) ) {
 			$in_section = true;
 		} else {
 			// sometimes there are CPTs nested inside sections, check for that
