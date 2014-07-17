@@ -38,7 +38,7 @@ class TemplateMap {
 	private static $instance;
 
 	/**
-	 * @var array Internal cache where the key is the template, values are the related post ID and template filename
+	 * @var array Internal cache where the key is the template, value is the determined post ID using that Page Template
 	 */
 	public $cache = array();
 
@@ -69,14 +69,9 @@ class TemplateMap {
 	 * ID by querying for a post with a certain Page Template (which is more often than
 	 * not the case when implementing)
 	 *
-	 * This method is designed to be used in your theme's functions.php (or otherwise) as
-	 * you will need to hardcode your section names and page template filenames
-	 *
-	 * Expected $sections format = array( 'section_name' => 'page-template-filename.php' );
-	 *
 	 * @param array $sections
 	 */
-	public function set_sections_from_templates( $sections = array() ) {
+	public function set_sections_from_templates() {
 		$templates = wp_get_theme()->get_page_templates();
 		foreach ( array_keys( $templates ) as $template ) {
 			$args = array(
@@ -108,16 +103,16 @@ class TemplateMap {
 	 * Template anyway)
 	 *
 	 * This method is designed to be used in your theme's functions.php (or otherwise) as
-	 * you will need to hardcode your section name and post ID
+	 * you will need to hardcode your Page Template filename and post ID
 	 *
-	 * @param string $section
+	 * @param string $template
 	 * @param int    $id The post ID of the parent
 	 */
-	public function set_section_from_id( $section = '', $id = 0 ) {
-		if ( empty( $section ) || empty ( $id ) ) {
+	public function set_section_from_id( $template = '', $id = 0 ) {
+		if ( empty( $template ) || empty ( $id ) ) {
 			return;
 		}
-		$this->cache[ $section ] = absint( $id );
+		$this->cache[ $template ] = absint( $id );
 	}
 
 	/**
