@@ -10,6 +10,8 @@ Template Map is a utility plugin designed to make the creation and management of
 
 It's based on the notion that when Pages dictate the base URI structure of a site, you can utilize each Page's Page Template to decipher post IDs that otherwise may have been hard coded into your theme. Hard coding IDs works fine during intial development, *but it's a maintenance nightmare*. As new site sections are added, the post IDs in your development environment quickly diverge from those in production and vice versa. Template Map aims to solve that problem and in doing so provide even more utility.
 
+#### IMPORTANT NOTE: Page Templates are assumed to be unique
+
 Naturally Pages may not encompass the entire sitemap of your site, which may have top level Custom Post Type slugs or Pages without a unique Page Template. While that's uncommon for my client work specifically, there are methods in Template Map that allow you to 'register' additional map entries as well.
 
 ## Documentation
@@ -40,6 +42,8 @@ That works great during initial development, and continues to hold up when you m
 ```
 
 Template Map allows you to *dynamically* retreive your desired post ID based on the Page Template you told it to use. Page Template filenames rarely (if ever) change, so it's the core concept of Template Map's implementation. Everything works backwards from here.
+
+#### IMPORTANT NOTE: Page Templates are assumed to be unique
 
 Naturally this philosophy assumes your Page Template is used only once, it's important to keep that in mind. Modern client sites often use unique Page Templates for the 'parent' pages of each site section. 
 
