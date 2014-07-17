@@ -8,7 +8,7 @@ Automagic mapping of Page Templates to post IDs to facilitate better dynamic lin
 
 Template Map is a utility plugin designed to make the creation and management of navigation elements in your custom theme that much easier. It abstracts the need to hard code post IDs and the like from your global and header navigation systems (if you choose to not use Menus) for instance.
 
-It's based on the notion that when Pages dictate the base URI structure of a site, you can utilize each Page's Page Template to decipher post IDs that otherwise may have been hard coded into your theme. Hard coding IDs works fine during intial development, *but it's a maintenance nightmare*. As new site sections are added, the post IDs in your development environment quickly divert from those in production and vice versa. Template Map aims to solve that problem and in doing so provide even more utility.
+It's based on the notion that when Pages dictate the base URI structure of a site, you can utilize each Page's Page Template to decipher post IDs that otherwise may have been hard coded into your theme. Hard coding IDs works fine during intial development, *but it's a maintenance nightmare*. As new site sections are added, the post IDs in your development environment quickly diverge from those in production and vice versa. Template Map aims to solve that problem and in doing so provide even more utility.
 
 Naturally Pages may not encompass the entire sitemap of your site, which may have top level Custom Post Type slugs or Pages without a unique Page Template. While that's uncommon for my client work specifically, there are methods in Template Map that allow you to 'register' additional map entries as well.
 
