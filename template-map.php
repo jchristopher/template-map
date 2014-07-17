@@ -149,7 +149,7 @@ class TemplateMap {
 		// an empty section means the front page
 		if ( empty( $section ) && ! is_front_page() ) {
 			return false;
-		} elseif( is_front_page() ) {
+		} elseif( empty( $section ) && is_front_page() ) {
 			return true;
 		}
 
