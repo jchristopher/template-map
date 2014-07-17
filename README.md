@@ -16,7 +16,7 @@ Naturally Pages may not encompass the entire sitemap of your site, which may hav
 
 Many times you may use something like the following to build your main site navigation:
 
-```
+```html
 <nav>
   <ul>
     <li>
@@ -28,7 +28,7 @@ Many times you may use something like the following to build your main site navi
 
 That works great during initial development, and continues to hold up when you migrate to production en masse for the first time. But what about when you're making subsequent updates and the post IDs in your development environment are different than those in production? You could take the time to sync the databases each and every time, but that's a bit overkill. Here's where Template Map comes in to play:
 
-```
+```html
 <nav>
   <ul>
     <li>
@@ -47,7 +47,7 @@ Naturally this philosophy assumes your Page Template is used only once, it's imp
 
 Template Map also makes it easier to determine whether the current page is within a site 'section' which is defined as a top level Page with a unique Page Template that has any number of child Pages and/or Custom Post Types within it. This is very useful when trying to set a 'current' state in your navigation, for example:
 
-```
+```html
 <nav>
   <ul>
     <li class="<?php if( TemplateMap()->maybe_in_section( 'template-about.php' ) ) : ?> current<?php endif; ?>">
