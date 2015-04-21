@@ -45,7 +45,7 @@ Template Map allows you to *dynamically* retreive your desired post ID based on 
 
 #### IMPORTANT NOTE: Page Templates are assumed to be unique
 
-Naturally this philosophy assumes your Page Template is used only once, it's important to keep that in mind. Modern client sites often use unique Page Templates for the 'parent' pages of each site section. 
+Naturally this philosophy assumes your Page Template is used only once, it's important to keep that in mind. Modern client sites often use unique Page Templates for the 'parent' pages of each site section.
 
 ### Current Site Section
 
