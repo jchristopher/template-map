@@ -3,12 +3,12 @@
 Plugin Name: Template Map
 Plugin URI: http://wordpress.org/plugins/template-map/
 Description: Automagic mapping of Page Templates to post IDs to facilitate better dynamic link generation
-Version: 1.0
+Version: 1.0.1
 Author: Jonathan Christopher
 Author URI: http://mondaybynoon.com/
 Text Domain: templatemap
 
-Copyright 2014 Jonathan Christopher
+Copyright 2014-2015 Jonathan Christopher
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

@@ -1,10 +1,10 @@
 === Template Map ===
 Contributors: jchristopher
-Donate link: http://example.com/
+Donate link: http://mondaybynoon.com/donate/
 Tags: template, link
 Requires at least: 3.9
-Tested up to: 4.2
-Stable tag: 1.0
+Tested up to: 4.3
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,7 +39,7 @@ That works great during initial development, and continues to hold up when you m
 
 Template Map allows you to *dynamically* retreive your desired post ID based on the Page Template you told it to use. Page Template filenames rarely (if ever) change, so it's the core concept of Template Map's implementation. Everything works backwards from here.
 
-Naturally this philosophy assumes your Page Template is used only once, it's important to keep that in mind. Modern client sites often use unique Page Templates for the 'parent' pages of each site section. 
+Naturally this philosophy assumes your Page Template is used only once, it's important to keep that in mind. Modern client sites often use unique Page Templates for the 'parent' pages of each site section.
 
 = Current Site Section =
 
@@ -70,6 +70,9 @@ Based on the same principle you can use this utility method to properly orient y
 There's a filter for that. `template_map_post_types` accepts two parameters, the second of which is the Page Template filename in question. You can conditionally return an array of CPT names that will be utilized when checking to see whether the current page is within the section in question.
 
 == Changelog ==
+
+= 1.0.1 =
+* When using maybe_in_section you can pass a 2nd parameter to force a parent ID
 
 = 1.0 =
 * Initial release
