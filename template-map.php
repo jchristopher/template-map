@@ -138,25 +138,31 @@ class TemplateMap {
 	 *
 	 * @param $section string The 'section' to check within
 	 *
+	 * @param int $post_id
+	 *
 	 * @return bool Whether the current page is within the submitted 'section'
 	 */
-	function maybe_in_section( $section ) {
+	function maybe_in_section( $section, $post_id = 0 ) {
 		global $post;
 
+		// providing a $post_id will force that as the parent
+		// as opposed to working from a section name
+		$post_id = absint( $post_id );
+
 		// make sure the section has been registered
-		if ( ! array_key_exists( $section, $this->cache ) ) {
+		if ( empty( $post_id ) && ! array_key_exists( $section, $this->cache ) ) {
 			return false;
 		}
 
 		// an empty section means the front page
-		if ( empty( $section ) && ! is_front_page() ) {
+		if ( empty( $post_id ) && empty( $section ) && ! is_front_page() ) {
 			return false;
-		} elseif( empty( $section ) && is_front_page() ) {
+		} elseif ( empty( $post_id ) && empty( $section ) && is_front_page() ) {
 			return true;
 		}
 
 		$in_section = false;
-		$parent_id = $this->get_id_from_template( $section );
+		$parent_id  = empty( $post_id ) ? $this->get_id_from_template( $section ) : $post_id;
 
 		// allow developers to specify which Custom Post Types are nested inside this section
 		$cpts = apply_filters( 'template_map_post_types', array(), $section );
